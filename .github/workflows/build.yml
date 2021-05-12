@@ -37,6 +37,9 @@ jobs:
       - name: Build
         run: ./build.sh
   
+      - name: Test
+        run: ./test.sh
+
       - name: Upload file
         uses: actions/upload-artifact@v2
         with:
