@@ -41,4 +41,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: mingw-w64-gnutls
-          path: packages/mingw-w64-gnutls/mingw-w64-gnutls*.pkg.tar.xz
+          path: packages/mingw-w64-gnutls/mingw-w64*gnutls*.tar*
