@@ -1,0 +1,1 @@
+# mingw-w64-gnutls-without-p11-kit
