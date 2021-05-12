@@ -32,7 +32,7 @@ jobs:
         with:
           msystem: MINGW64
           update: true
-          install: patch dos2unix git make mingw64/mingw-w64-x86_64-gcc mingw64/mingw-w64-x86_64-diffutils mingw64/mingw-w64-x86_64-pkg-config
+          install: base-devel git mingw64/mingw-w64-x86_64-gcc mingw64/mingw-w64-x86_64-diffutils mingw64/mingw-w64-x86_64-pkg-config
 
       - name: Build
         run: ./build.sh
