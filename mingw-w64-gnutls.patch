@@ -1,22 +1,22 @@
 diff --git a/mingw-w64-gnutls/0006-iconv-add-it-to-pkg-config.patch b/mingw-w64-gnutls/0006-iconv-add-it-to-pkg-config.patch
 new file mode 100644
-index 000000000..8e88e2138
+index 000000000..12f0b755e
 --- /dev/null
 +++ b/mingw-w64-gnutls/0006-iconv-add-it-to-pkg-config.patch
 @@ -0,0 +1,11 @@
-+diff --git a/lib/gnutls.pc.in b/lib/gnutls.pc.in
-+index a890b20..1bb3c58 100644
-+--- a/lib/gnutls.pc.in
-++++ b/lib/gnutls.pc.in
-+@@ -20,5 +20,5 @@ URL: https://www.gnutls.org/
++diff -Naur gnutls-3.7.0.orig/lib/gnutls.pc.in gnutls-3.7.0/lib/gnutls.pc.in
++--- gnutls-3.7.0.orig/lib/gnutls.pc.in	2021-05-13 07:23:29.522147091 +0800
+++++ gnutls-3.7.0/lib/gnutls.pc.in	2021-05-13 07:26:53.503780866 +0800
++@@ -19,6 +19,6 @@
++ URL: https://www.gnutls.org/
 + Version: @VERSION@
 + Libs: -L${libdir} -lgnutls
-+ Libs.private: @LIBINTL@ @LIBSOCKET@ @INET_PTON_LIB@ @LIBPTHREAD@ @LIB_SELECT@ @TSS_LIBS@ @GMP_LIBS@ @LIBUNISTRING@ @LIBATOMIC_LIBS@ @GNUTLS_LIBS_PRIVATE@
-+-@GNUTLS_REQUIRES_PRIVATE@
-++@GNUTLS_REQUIRES_PRIVATE@ -liconv
++-Libs.private: @LIBINTL@ @LIBSOCKET@ @INET_PTON_LIB@ @LIBPTHREAD@ @LIB_SELECT@ @TSS_LIBS@ @GMP_LIBS@ @LIBUNISTRING@ @LIBATOMIC_LIBS@ @GNUTLS_LIBS_PRIVATE@
+++Libs.private: @LIBINTL@ @LIBSOCKET@ @INET_PTON_LIB@ @LIBPTHREAD@ @LIB_SELECT@ @TSS_LIBS@ @GMP_LIBS@ @LIBUNISTRING@ @LIBATOMIC_LIBS@ @GNUTLS_LIBS_PRIVATE@ -liconv
++ @GNUTLS_REQUIRES_PRIVATE@
 + Cflags: -I${includedir}
 diff --git a/mingw-w64-gnutls/PKGBUILD b/mingw-w64-gnutls/PKGBUILD
-index 4d736a236..7cb39eff5 100644
+index 4d736a236..43b52a4b6 100644
 --- a/mingw-w64-gnutls/PKGBUILD
 +++ b/mingw-w64-gnutls/PKGBUILD
 @@ -14,12 +14,10 @@ url="https://www.gnutls.org/"
@@ -47,7 +47,7 @@ index 4d736a236..7cb39eff5 100644
              'cbf9e59fb2432d4ac1edcb70734023e074b8058fa4c010a036a40de8449f67fb'
 -            '10ea5a84459af8d848788cc8871decd3b3cdd542b829883ebe4f6ec28d60578f')
 +            '10ea5a84459af8d848788cc8871decd3b3cdd542b829883ebe4f6ec28d60578f'
-+            '187a86da384a796e2e7ea49723a926515055c4a05839f5f6ebbe87db393ea734')
++            '4145d07e7793dfc2d1b222b5e80f771e42901cfd66b407efdeb81009cf8a19f6')
  validpgpkeys=('0424D4EE81A0E3D119C6F835EDA21E94B565716F')  # "Simon Josefsson <simon@josefsson.org>"
  validpgpkeys+=('1F42418905D8206AA754CCDC29EE58B996865171') # "Nikos Mavrogiannopoulos <nmav@gnutls.org>
  validpgpkeys+=('462225C3B46F34879FC8496CD605848ED7E69871') # "Daiki Ueno <ueno@unixuser.org>"
