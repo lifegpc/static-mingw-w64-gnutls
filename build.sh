@@ -1,3 +1,4 @@
-cd packages/mingw-w64-gnutls || return 1
-git apply ../../mingw-w64-gnutls.patch || return 1
-MINGW_ARCH=mingw64 makepkg-mingw -sLf --nosign --noconfirm --skippgpcheck --noprogressbar || return 1
+cd packages || exit 1
+git apply ../mingw-w64-gnutls.patch || exit 1
+cd mingw-w64-gnutls || exit 1
+MINGW_ARCH=mingw64 makepkg-mingw -sLf --nosign --noconfirm --skippgpcheck --noprogressbar || exit 1
