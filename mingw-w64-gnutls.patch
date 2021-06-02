@@ -1,5 +1,5 @@
 diff --git a/mingw-w64-gnutls/PKGBUILD b/mingw-w64-gnutls/PKGBUILD
-index 628c726b9..64bd90e95 100644
+index 99e83dfde..28e7c6150 100644
 --- a/mingw-w64-gnutls/PKGBUILD
 +++ b/mingw-w64-gnutls/PKGBUILD
 @@ -14,12 +14,10 @@ url="https://www.gnutls.org/"
@@ -23,7 +23,7 @@ index 628c726b9..64bd90e95 100644
 -        0005-remove-coverage-rules.patch)
 +        0005-remove-coverage-rules.patch
 +        0006-iconv-add-it-to-pkg-config.patch)
- sha256sums=('3777d7963eca5e06eb315686163b7b3f5045e2baac5e54e038ace9835e5cac6f'
+ sha256sums=('646e6c5a9a185faa4cea796d378a1ba8e1148dbb197ca6605f95986a25af2752'
              'SKIP'
              '6493f69e782d60fe04de4b0040987e99851c522d0baf2fe25d10b85b63e97863'
              'cbf9e59fb2432d4ac1edcb70734023e074b8058fa4c010a036a40de8449f67fb'
@@ -41,10 +41,10 @@ index 628c726b9..64bd90e95 100644
  
    WANT_AUTOMAKE=latest autoreconf -fiv -I m4
  }
-@@ -73,6 +74,9 @@ build() {
-     --disable-guile \
+@@ -83,6 +84,9 @@ build() {
      --disable-libdane \
      --disable-tests \
+     "${extra_config[@]}" \
 +    --without-p11-kit \
 +    --with-included-unistring \
 +    --without-idn \
